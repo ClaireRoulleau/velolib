@@ -1,0 +1,355 @@
+/* ---------------------------------------- */
+/* ==            code commun               */
+/*---------------------------------------- */
+
+@font-face {
+    font-family: 'robotobold';
+    src: url('fontfamily/fonts/roboto-bold-webfont.woff2') format('woff2'),
+        url('fontfamily/fonts/roboto-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('fontfamily/fonts/roboto-regular-webfont.woff2') format('woff2'),
+        url('fontfamily/fonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#bloc_page {
+    width: 100%;
+    margin: auto;
+    max-width: 2000px;
+}
+
+/*police, taille des titres*/
+
+
+/* ---------------------------------------- */
+/* ==            header                     */
+/*---------------------------------------- */
+header {
+
+
+    width: 100%;
+    height: auto;
+    background-color: rgba(78, 149, 173, 0.3);
+
+
+}
+
+h1 {
+    font-family: "robotoregular", sans-serif;
+    font-size: 2em;
+    text-align: center;
+    padding-top: 2%;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 1.8em;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 2%;
+}
+
+header nav li {
+    margin-right: 15px;
+}
+
+header nav a {
+    text-decoration: none;
+
+}
+
+/* ---------------------------------------- */
+/* ==            slider                    */
+/*---------------------------------------- */
+#slider,
+.wrap,
+.slide-content {
+    width: 100%;
+    height: 60vh;
+    margin: auto;
+    overflow-x: hidden;
+}
+
+.wrap {
+    position: relative;
+
+    border: 3px solid black;
+
+    overflow: hidden;
+
+}
+
+.slide {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.slide1 {
+    background-image: url("station_velo2.jpg");
+}
+
+.slide2 {
+    background-image: url("station_velo7.jpg");
+}
+
+.slide3 {
+    background-image: url("station_velo9.jpg");
+}
+
+.slide-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.slide-content {
+    font-size: 3.5em;
+    color: #fff;
+    background-color: rgba(78, 149, 173, 0.3);
+}
+
+
+/*BOUTON slider*/
+
+#button_slider {
+    display: flex;
+    justify-content: center;
+
+}
+
+/* ---------------------------------------- */
+/* ==   conteneur: map+reservation         */
+/*---------------------------------------- */
+
+#conteneur {
+    display: flex;
+
+
+}
+
+#mapId {
+    height: 680px;
+    width: 650px;
+    margin-left: 5%;
+
+
+}
+
+#booking {
+    width: 40%;
+    height: auto;
+    margin: auto;
+
+    background-color: rgba(78, 149, 173, 0.3);
+    margin-left: 30px;
+    border: 2px solid black;
+}
+
+
+#booking h3 {
+    text-align: center;
+    font-size: 1.5em;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+
+
+}
+
+
+form {
+
+    padding-left: 10px;
+    padding-top: 10px;
+
+}
+
+/*presentation*/
+#booking_detail {
+    padding: 5%;
+
+    font-weight: bold;
+
+    background-color: rgba(78, 149, 173, 0.5);
+
+}
+
+#confirmation p {
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.booking_button {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5%;
+
+
+
+}
+
+#bikes0available {
+    display: none;
+}
+
+
+
+/* ---------------------------------------- */
+/* ==            canvas                    */
+/*---------------------------------------- */
+
+
+#sig-canvas {
+    border: 2px solid black;
+    display: block;
+    margin: auto;
+
+
+}
+
+
+#confirmation_booking {
+    display: none;
+}
+
+
+
+/* ---------------------------------------- */
+/* ==            FORMULAIRE                */
+/*---------------------------------------- */
+
+
+#mistake {
+    display: none;
+    text-align: center;
+    color: red;
+}
+
+#confirmation {
+    display: none;
+}
+
+#inProgress {
+    margin-top: 40px;
+
+}
+
+
+#inProgressPara3 {
+    display: none;
+}
+
+
+/* ---------------------------------------- */
+/* ==            MEDIA QUERIES             */
+/*---------------------------------------- */
+
+
+
+@media all and (max-width: 480px) {
+    header {
+        flex-direction: column;
+    }
+
+    header nav {
+        margin: auto;
+        text-align: center;
+    }
+
+    header nav ul {
+        padding: 0;
+    }
+
+    .slide-content {
+        font-size: 1em;
+    }
+
+    #conteneur {
+        flex-direction: column;
+    }
+
+    #mapId {
+        height: 300px;
+        width: 90%;
+        margin-bottom: 5%;
+        margin-left: 0%;
+
+
+    }
+
+    #booking {
+        width: 90%;
+        margin-left: 0%;
+    }
+
+    #name {
+
+        margin-bottom: 5%;
+    }
+
+    #sig-canvas {
+        width: 90%;
+        height: auto;
+
+    }
+
+}
+
+@media all and (min-width: 481px) and (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    header nav {
+        margin: auto;
+        text-align: center;
+    }
+
+    .slide-content {
+        font-size: 2em;
+    }
+
+    #conteneur {
+        flex-direction: column;
+    }
+
+    #mapId {
+        height: 300px;
+        width: 90%;
+        margin-bottom: 5%;
+
+
+    }
+
+    #booking {
+        width: 90%;
+
+    }
+
+    #form {
+
+        text-align: center;
+    }
+
+    #sig-canvas {
+        width: 90%;
+        height: auto;
+
+    }
+
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="location.velo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!--velolib and js><-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+
+    <title>Vélolib</title>
+</head>
+
+<body>
+    <div id="bloc_page">
+        <header>
+            <h1>Bienvenue sur Vélib Projet</h1>
+            <nav>
+                <ul>
+                    <li>Comment ça marche?</li>
+                    <li>Réservez votre vélo</li>
+
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div class="wrap">
+                <div id="slider">
+                    <div class="slide slide1">
+                        <div class="slide-content">
+                            <span>Sélectionnez votre station de vélo. En cliquant dessus vous pouvez vérifier la disponibilité des vélos.</span>
+                        </div>
+                    </div>
+                    <div class="slide slide2">
+                        <div class="slide-content">
+                            <span>Réservez votre vélo en cliquant sur "Réservez", inscrivez-vous via le formulaire puis signez pour confirmer</span>
+                        </div>
+                    </div>
+                    <div class="slide slide3">
+                        <div class="slide-content">
+                            <span>Votre réservation sera valide pendant 20min. <br />Bonne route!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="button_slider">
+                <p>
+                    <button id="prevBtn">Précedent</button>
+                    <button id="stopBtn">Pause</button>
+                    <button id="nextBtn">Suivant</button>
+                </p>
+            </div>
+        </section>
+        <section>
+            <h2>Station Vélib de Lyon</h2>
+
+            <div id="conteneur">
+                <div id="mapId"></div>
+                <div id="booking">
+
+                    <h3>Réservez votre vélo</h3>
+                    <div id="booking_detail">
+                        <p id="name_station">Nom de la station: <span id="name_location"></span></p>
+                        <p id="adress">Adresse: <span id="info"></span></p>
+                        <p id="bikes_number"> vélos disponibles:<span id="bikes"></span> </p>
+                        <p id="status">Status: <span id="status_station"></span></p>
+                        <p id="bikes0available">Pour réserver, veuillez choisir une station avec des vélos disponibles</p>
+                    </div>
+                    <!--fin booking detail><-->
+
+                    <div id="mistake">
+                        <p>Vous n'avez pas rempli correctement les champs du formulaire !</p>
+                    </div>
+
+                    <form id="form">
+                        <p><strong>Pour commencer à reserver un vélo, merci d'indiquer votre nom et prénom</strong></p>
+                        <label for="name"></label> <input type="text" id="name" placeholder="Votre nom" class="field" />
+                        <label for="firstNmane"></label> <input type="text" id="firstName" placeholder="Votre prénom" class="field" />
+
+                        <input type="submit" id="send_form" value="En route!" />
+                    </form>
+                    <br />
+                    <div id="confirmation">
+                        <p>Merci de signer dans l'encadré puis confirmer votre reservation</p>
+                        <canvas id="sig-canvas">
+                            Get a better browser, bro.
+                        </canvas>
+                        <br />
+                        <br />
+                        <div class="booking_button">
+                            <button id="confirmation_booking">Confimer votre reservation</button>
+                            <button id="cancel_booking">Annuler votre réservation</button>
+                        </div>
+                    </div>
+                </div>
+                <!--fin booking><-->
+            </div>
+            <!--fin conteneur><-->
+            <fieldset id="inProgress">
+                <legend>Votre réservation</legend>
+                <p id="inProgressPara1">Vous n'avez pas de réservation en cours... </p>
+                <p id="inProgressPara3">Votre réservation expirera dans <span id="timer"></span>. </p>
+            </fieldset>
+        </section>
+    </div>
+    <script src="ajax.js"></script>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="module" src="canvas.js"></script>
+    <script type="module" src="timer.js"></script>
+    <script type="module" src="location.velo.js"></script>
+</body>
+
+</html>
